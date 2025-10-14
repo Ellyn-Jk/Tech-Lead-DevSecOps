@@ -1,0 +1,29 @@
+name: Trivy Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  trivy-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Rodar Trivy no container Juice Shop
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: image
+          image-ref: bkimminich/juice-shop
+          format: table
+          output: relatorios/trivy-result.txt
+
+      - name: Upload do relatório como artefato
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-report
+          path: relatorios/trivy-result.txt
