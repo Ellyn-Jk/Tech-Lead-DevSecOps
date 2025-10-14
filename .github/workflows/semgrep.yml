@@ -1,0 +1,29 @@
+name: Semgrep Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  semgrep-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Rodar Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: auto
+          generateSarif: true
+          publishSarif: false
+          output: relatorios/semgrep-result.txt
+
+      - name: Upload do relatório como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-report
+          path: relatorios/semgrep-result.txt
