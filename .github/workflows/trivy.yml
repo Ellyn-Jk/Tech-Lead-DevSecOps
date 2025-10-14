@@ -23,7 +23,7 @@ jobs:
           output: relatorios/trivy-result.txt
 
       - name: Upload do relatório como artefato
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: trivy-report
           path: relatorios/trivy-result.txt
