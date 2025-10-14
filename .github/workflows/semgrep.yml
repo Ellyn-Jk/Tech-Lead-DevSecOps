@@ -14,13 +14,11 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Rodar Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: auto
-          generateSarif: true
-          publishSarif: false
-          output: relatorios/semgrep-result.txt
+      - name: Instalar Semgrep
+        run: pip install semgrep
+
+      - name: Rodar Semgrep com configuração automática
+        run: semgrep --config auto --output relatorios/semgrep-result.txt
 
       - name: Upload do relatório como artefato
         uses: actions/upload-artifact@v4
