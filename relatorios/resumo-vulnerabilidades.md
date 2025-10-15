@@ -8,10 +8,41 @@ Este documento consolida os resultados dos scanners de segurança aplicados à a
 
 - **Semgrep**: análise estática de código-fonte (SAST)
 - **Trivy**: scan de vulnerabilidades em containers Docker
-- *(Em breve: OWASP Dependency-Check, Snyk)*
+- **Snyk**: análise de segurança em dependências de projeto (SCA – Software Composition Analysis)
 
 ---
+##🧪 Resultados do Snyk
 
+**Data do scan:** 14/10/2025
+**Tipo de análise:** Dependências (SCA – npm)
+|  |  |  | 
+|  |  | vm2multermarsdb | 
+|  |  | lodashjsonwebtokensanitize-html | 
+|  |  | momentsocket.iosanitize-htmlgot | 
+|  |  | web3hbs | 
+
+
+
+Observações
+- Foram encontradas 61 vulnerabilidades em 76 caminhos vulneráveis
+- Algumas dependências críticas não possuem correção disponível
+- O scan foi realizado sobre o código da aplicação Juice Shop, após instalação das dependências via npm install
+- O relatório completo está salvo em relatorios/snyk-result.txt
+- A explicação detalhada está em relatorios/snyk-explicacao.md
+
+Ações recomendadas
+- Atualizar pacotes como express-jwt, jsonwebtoken, sanitize-html, socket.io, multer, lodash, entre outros
+- Rodar npm audit fix e revisar os impactos de npm audit fix --force
+- Avaliar dependências sem correção disponível e considerar alternativas ou isolamento
+
+⚠️ Scanner OWASP Dependency-Check
+Status: Não executado com sucesso
+Motivo: Erro 403 ao acessar feeds da NVD (restrição de rede)
+Resultado: Sem relatório gerado
+Observação: A falha está documentada no terminal e explicada em snyk-explicacao.md
+
+
+--
 ## 🧪 Resultados do Semgrep
 
 **Data do scan:** 14/10/2025  
