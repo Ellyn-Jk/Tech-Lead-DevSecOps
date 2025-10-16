@@ -18,23 +18,22 @@ jobs:
       run: |
         pip install semgrep
         mkdir -p relatorios
-        semgrep scan --config auto > relatorios/semgrep-result.txt || true
+        semgrep scan --config auto > relatorios/semgrep-result.txt || echo "Semgrep falhou"
 
     - name: Rodar Trivy via Docker
       run: |
         mkdir -p relatorios
-        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || true
+        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || echo "Trivy falhou"
 
-    - name: Rodar Snyk
+    - name: Autenticar e rodar Snyk
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       run: |
-  - name: Autenticar e rodar Snyk
-    env:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    run: |
-      npm install -g snyk
-      snyk auth $SNYK_TOKEN
-      mkdir -p relatorios
-    snyk test --json > relatorios/snyk-result.txt || echo "Snyk falhou"
+        npm install -g snyk
+        snyk auth $SNYK_TOKEN
+        mkdir -p relatorios
+        snyk test --json > relatorios/snyk-result.txt || echo "Snyk falhou"
+
     - name: Upload dos relatórios
       uses: actions/upload-artifact@v4
       with:
