@@ -1,0 +1,32 @@
+name: DevSecOps Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Instalar Semgrep e rodar
+      run: |
+        pip install semgrep
+        semgrep scan --config auto > relatorios/semgrep-result.txt || true
+
+    - name: Instalar Trivy e rodar
+      run: |
+        sudo apt update && sudo apt install wget -y
+        wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.50.1_Linux-64bit.deb
+        sudo dpkg -i trivy_0.50.1_Linux-64bit.deb
+        trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || true
+
+    - name: Instalar Snyk e rodar
+      run: |
+        npm install -g snyk
+        snyk test --json > relatorios/snyk-result.txt || true
