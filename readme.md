@@ -1,3 +1,10 @@
+---
+
+## 👩‍💻 Autoria
+Angelina, Bruna, Ellyn e Gabriela
+
+---
+
 # 🛡️ Projeto DevSecOps – Juice Shop
 
 Este repositório documenta a aplicação de uma esteira DevSecOps sobre o projeto [Juice Shop](https://github.com/juice-shop/juice-shop), utilizando ferramentas de análise de segurança em código-fonte, dependências e containers.
@@ -68,6 +75,3 @@ Tech-Lead-DevSecOps/ ├── relatorios/ │   ├── semgrep-result.txt �
 
 ---
 
-## 👩‍💻 Autoria
-
-Este projeto foi conduzido por **Ellyn**, com foco em segurança, automação e rastreabilidade.  
