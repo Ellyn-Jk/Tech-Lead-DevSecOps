@@ -9,22 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-- name: Checkout código
-  uses: actions/checkout@v3
-  with:
-    fetch-depth: 0
+    - name: Checkout código
+      uses: actions/checkout@v3
 
-    - name: Instalar Trivy
-      run: |
-curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
-
-    - name: Baixar imagem do Juice Shop
-      run: docker pull bkimminich/juice-shop
-
-    - name: Rodar Trivy na imagem Docker
+    - name: Rodar Trivy via Docker
       run: |
         mkdir -p relatorios
-        trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || echo "Trivy falhou"
+        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || echo "Trivy falhou"
 
     - name: Verificar resultado
       run: cat relatorios/trivy-result.txt
