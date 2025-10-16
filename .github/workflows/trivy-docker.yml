@@ -26,5 +26,5 @@ jobs:
         mkdir -p relatorios
         trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || echo "Trivy falhou"
 
-    - name: Listar arquivos gerados
-      run: ls -lh relatorios/
+    - name: Verificar resultado
+      run: cat relatorios/trivy-result.txt
