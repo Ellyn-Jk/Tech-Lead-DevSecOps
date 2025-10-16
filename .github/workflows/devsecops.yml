@@ -27,9 +27,14 @@ jobs:
 
     - name: Rodar Snyk
       run: |
-        npm install -g snyk
-        snyk test --json > relatorios/snyk-result.txt || true
-
+  - name: Autenticar e rodar Snyk
+    env:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    run: |
+      npm install -g snyk
+      snyk auth $SNYK_TOKEN
+      mkdir -p relatorios
+    snyk test --json > relatorios/snyk-result.txt || echo "Snyk falhou"
     - name: Upload dos relatórios
       uses: actions/upload-artifact@v4
       with:
