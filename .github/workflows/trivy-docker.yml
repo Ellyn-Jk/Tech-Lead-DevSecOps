@@ -15,7 +15,7 @@ jobs:
     - name: Rodar Trivy via Docker
       run: |
         mkdir -p relatorios
-        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image bkimminich/juice-shop > relatorios/trivy-result.txt || echo "Trivy falhou"
+        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image bkimminich/juice-shop > relatorios/trivy-result.txt
 
     - name: Verificar resultado
       run: cat relatorios/trivy-result.txt
