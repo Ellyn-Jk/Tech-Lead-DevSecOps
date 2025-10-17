@@ -97,9 +97,8 @@ Este documento orienta o avaliador sobre como instalar, executar e verificar os 
 
 ---
 
-## 1. Clonar o repositório
-git clone https://github.com/Ellyn-Jk/seu-repositorio.git
-cd seu-repositorio
+##1. Clonar o repositório
+git clone https://github.com/Ellyn-Jk/Tech-Lead-DevSecOps
 
 ##2. Verificar os arquivos principais
 Certifique-se de que o repositório contém:
