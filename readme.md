@@ -9,7 +9,7 @@ Este repositório documenta a aplicação de uma esteira DevSecOps sobre o proje
 ---
 
 # 💬 Observações gerais 
-- Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segred>
+- Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segredo.
 - Optamos por incluir o projeto Juice Shop como submódulo Git porque ele possui muitos arquivos e dependências pesadas. Durante a execução do projeto, ao tentar subir o projeto juice-shop o git exibiu a mensagem de erro informando que alguns arquivos excediam o limite de tamanho.
 - Como opção também deixamos o projeto .zip
 - A aplicação Juice Shop foi escaneada em ambiente local via Docker (`localhost:3000`)
