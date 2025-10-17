@@ -1,4 +1,10 @@
 ## 👩‍💻 Autoria
+Angelina, Bruna, Ellyn e Gabriela
+
+---
+
+# 🛡️ Projeto DevSecOps – Juice Shop
+>>>>>>> a5cfd46a0326e1568590d10b8d94dff86307c3ff
 
 Este projeto foi conduzido por **Angelina**, **Bruna**, **Ellyn**, **Gabriela**
 
@@ -129,3 +135,7 @@ Para que o scanner Snyk funcione corretamente, é necessário configurar o token
 - O relatório consolidado está disponível em `relatorios/resumo-vulnerabilidades.md`
 
 ---
+<<<<<<< HEAD
+=======
+
+>>>>>>> a5cfd46a0326e1568590d10b8d94dff86307c3ff
