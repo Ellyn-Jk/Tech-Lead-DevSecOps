@@ -1,11 +1,4 @@
 ## 👩‍💻 Autoria
-Angelina, Bruna, Ellyn e Gabriela
-
----
-
-# 🛡️ Projeto DevSecOps – Juice Shop
->>>>>>> a5cfd46a0326e1568590d10b8d94dff86307c3ff
-
 Este projeto foi conduzido por **Angelina**, **Bruna**, **Ellyn**, **Gabriela**
 
 # 🛡️ Projeto DevSecOps – Juice Shop
@@ -125,17 +118,11 @@ O workflow é disparado automaticamente em:
 Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segredo no GitHub. O projeto já está preparado para isso.
 
 
-
-
 ---
-## 📌 Observações finais
+##Observações finais
 
 - A aplicação Juice Shop foi escaneada em ambiente local via Docker (`localhost:3000`)
 - Todos os scanners foram executados manualmente e documentados
 - O relatório consolidado está disponível em `relatorios/resumo-vulnerabilidades.md`
 
 ---
-<<<<<<< HEAD
-=======
-
->>>>>>> a5cfd46a0326e1568590d10b8d94dff86307c3ff
