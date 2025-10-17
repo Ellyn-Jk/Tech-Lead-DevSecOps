@@ -1,13 +1,19 @@
 ## 👩‍💻 Autoria
-Este projeto foi conduzido por **Angelina**, **Bruna**, **Ellyn**, **Gabriela**
+Este projeto foi conduzido por **Angelina Maria**, **Bruna Alves**, **Ellyn Josefik**, **Gabriela Lindenberg**
+
+---
 
 # 🛡️ Projeto DevSecOps – Juice Shop
 Este repositório documenta a aplicação de uma esteira DevSecOps sobre o projeto [Juice Shop](https://github.com/juice-shop/juice-shop), utilizando ferramentas de análise de segurança em código-fonte, dependências e containers.
 
 ---
 
-## 🎯 Objetivo
+## 📁 Estrutura do repositório
+Tech-Lead-DevSecOps/ ├── relatorios/ │   ├── semgrep-result.txt │   ├── trivy-result.txt │   ├── snyk>
 
+---
+
+## 🎯 Objetivo
 Implementar uma esteira de segurança automatizada que identifique vulnerabilidades em diferentes camadas da aplicação, promovendo práticas de desenvolvimento seguro e rastreabilidade dos achados.
 
 ---
@@ -56,11 +62,6 @@ Implementar uma esteira de segurança automatizada que identifique vulnerabilida
 
 ---
 
-## 📁 Estrutura do repositório
-Tech-Lead-DevSecOps/ ├── relatorios/ │   ├── semgrep-result.txt │   ├── trivy-result.txt │   ├── snyk-result.txt │   ├── resumo-vulnerabilidades.md │   ├── semgrep-explicacao.md │   ├── snyk-explicacao.md │   └── trivy-explicacao.md ├── infra/ │   └── docker-compose.yml (se aplicável) ├── README.md
-
-
----
 ## ✅ Instruções de Avaliação do Projeto DevSecOps
 
 Este documento orienta o avaliador sobre como instalar, executar e verificar os resultados do projeto DevSecOps automatizado via GitHub Actions.
@@ -68,8 +69,6 @@ Este documento orienta o avaliador sobre como instalar, executar e verificar os 
 ---
 
 ## 1. Clonar o repositório
-
-```bash
 git clone https://github.com/Ellyn-Jk/seu-repositorio.git
 cd seu-repositorio
 
@@ -114,13 +113,14 @@ O workflow é disparado automaticamente em:
 - ✔️ Geração e entrega de relatórios
 - ✔️ Organização em um único fluxo (DevSecOps Scan)
 
-##🧠 Observação
-Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segredo no GitHub. O projeto já está preparado para isso.
-
 
 ---
-##Observações finais
 
+##💬 Observacoes finais
+
+- Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segred>
+- Optamos por incluir o projeto Juice Shop como submódulo Git porque ele possui muitos arquivos e dependências pesadas. Isso evita sobrecarregar nosso repositório principal e mantém o vínculo com o repositório oficial, permitindo atualizações futuras com facilidade.
+- Como opção também deixamos o projeto .zip
 - A aplicação Juice Shop foi escaneada em ambiente local via Docker (`localhost:3000`)
 - Todos os scanners foram executados manualmente e documentados
 - O relatório consolidado está disponível em `relatorios/resumo-vulnerabilidades.md`
