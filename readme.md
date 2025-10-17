@@ -8,6 +8,16 @@ Este repositório documenta a aplicação de uma esteira DevSecOps sobre o proje
 
 ---
 
+# 💬 Observações gerais 
+- Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segred>
+- Optamos por incluir o projeto Juice Shop como submódulo Git porque ele possui muitos arquivos e dependências pesadas. Durante a execução do projeto, ao tentar subir o projeto juice-shop o git exibiu a mensagem de erro informando que alguns arquivos excediam o limite de tamanho.
+- Como opção também deixamos o projeto .zip
+- A aplicação Juice Shop foi escaneada em ambiente local via Docker (`localhost:3000`)
+- Todos os scanners foram executados manualmente e documentados
+- O relatório consolidado está disponível em `relatorios/resumo-vulnerabilidades.md`
+
+---
+
 ## 📁 Estrutura do repositório
 Tech-Lead-DevSecOps/
 ├── infra/                          # Scripts e arquivos de infraestrutura como código
@@ -132,16 +142,5 @@ O workflow é disparado automaticamente em:
 - ✔️ Geração e entrega de relatórios
 - ✔️ Organização em um único fluxo (DevSecOps Scan)
 
-
----
-
-##💬 Observacoes finais
-
-- Para que o scanner Snyk funcione corretamente, é necessário configurar o token SNYK_TOKEN como segred>
-- Optamos por incluir o projeto Juice Shop como submódulo Git porque ele possui muitos arquivos e dependências pesadas. Isso evita sobrecarregar nosso repositório principal e mantém o vínculo com o repositório oficial, permitindo atualizações futuras com facilidade.
-- Como opção também deixamos o projeto .zip
-- A aplicação Juice Shop foi escaneada em ambiente local via Docker (`localhost:3000`)
-- Todos os scanners foram executados manualmente e documentados
-- O relatório consolidado está disponível em `relatorios/resumo-vulnerabilidades.md`
 
 ---
