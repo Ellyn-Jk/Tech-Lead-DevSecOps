@@ -9,7 +9,26 @@ Este repositório documenta a aplicação de uma esteira DevSecOps sobre o proje
 ---
 
 ## 📁 Estrutura do repositório
-Tech-Lead-DevSecOps/ ├── relatorios/ │   ├── semgrep-result.txt │   ├── trivy-result.txt │   ├── snyk>
+Tech-Lead-DevSecOps/
+├── infra/                          # Scripts e arquivos de infraestrutura como código
+│   ├── docker-compose.yml          # Arquivo de orquestração para subir serviços em containers
+│   └── README.md                   # Explicação sobre a infraestrutura utilizada
+│
+├── juice-shop/                     # Aplicação vulnerável usada para testes de segurança
+│   ├── README.md                   # Instruções sobre como executar e testar a aplicação
+│   └── docker-compose.yml          # Configuração para subir o Juice Shop via Docker
+│
+├── relatorios/                     # Relatórios e explicações das ferramentas de segurança utilizadas
+│   ├── .gitkeep                    # Arquivo para manter a pasta no repositório mesmo vazia
+│   ├── resumo-vulnerabilidades.md # Resumo consolidado das vulnerabilidades encontradas
+│   ├── semgrep-explicacao.md      # Explicação sobre a ferramenta Semgrep
+│   ├── semgrep-result.txt         # Resultados da análise com Semgrep
+│   ├── snyk-explicacao.md         # Explicação sobre a ferramenta Snyk
+│   ├── snyk-result.txt            # Resultados da análise com Snyk
+│   ├── trivy-explicacao.md        # Explicação sobre a ferramenta Trivy
+│   ├── trivy-result.txt           # Resultados da análise com Trivy
+│
+├── README.md                       # Documento principal com visão geral do projeto
 
 ---
 
